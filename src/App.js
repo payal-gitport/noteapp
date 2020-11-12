@@ -2,8 +2,9 @@ import React from "react";
 import Header from './Components/Header';
 import EditorComponent from "./Components/editor";
 import SidebarComponent from "./Components/Sidebar";
-
 import { db } from './firebase';
+import Signup from "./Components/Signup";
+import {Container} from "react-bootstrap";
 
 class App extends React.Component{
 
@@ -19,7 +20,15 @@ class App extends React.Component{
   render(){
     return(
     <div className="app-container">
+
+      <Container className = "d-flex align-item-center justify-content-center" style ={{minHeight:"100vh"}}>
+        <div className="w-100" style={{maxWidth: "400px"}} >
+        <Signup />
+        </div>
+      </Container>
+
       <Header />
+      
       <SidebarComponent 
         selectedNoteIndex={this.state.selectedNoteIndex}
         notes = {this.state.notes}
@@ -27,6 +36,7 @@ class App extends React.Component{
         selectNote = {this.selectNote}
         newNote = {this.newNote} >
       </SidebarComponent>
+
       {
           this.state.selectedNote ?
           <EditorComponent selectedNote={this.state.selectedNote}
@@ -35,6 +45,7 @@ class App extends React.Component{
           noteUpdate={this.noteUpdate}></EditorComponent> :
           null
         }
+        
     </div>)
   }
 
