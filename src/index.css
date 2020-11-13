@@ -25,17 +25,14 @@ html, body {
   font-size: 28px;
   font-weight: 900;
   text-transform: uppercase;
+  margin-left: 50%;
 }
 
 .header .title span {
   color: #F3F3F3;
-  font-weight: 300;
+  font-weight: 100;
 }
 
-#evernote-container {
-  height: 100%;
-  box-sizing: border-box;
-}
 .app-container {
   height: 100%;
   box-sizing: border-box;
